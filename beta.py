@@ -53,7 +53,6 @@ while running:
 
     if pygame.sprite.spritecollide(my_sprite, balls,True):
         HP -= 1
-        print(HP)
         balls.add(bala())
 
     for ball in balls:
@@ -82,8 +81,9 @@ while running:
         pixelated_surface = pygame.transform.scale(text_surface, (WIDTH/10, HEIGHT/10))
         # Draw the pixelated surface on the screen
         screen.blit(pixelated_surface, (WIDTH/2, HEIGHT/2))
-        for sprites in balls,darts,all_sprites:
-            sprites.kill()
+        speed=0
+        pygame.time.delay(50)
+        pygame.quit()
 
     pygame.display.flip()
     clock.tick(60)
